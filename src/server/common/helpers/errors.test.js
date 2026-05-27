@@ -23,7 +23,7 @@ describe('#errors', () => {
     })
 
     expect(result).toEqual(
-      expect.stringContaining('Page not found | cph-demo-dummy-frontend')
+      expect.stringContaining('Page not found | CPH Admin Portal')
     )
     expect(statusCode).toBe(statusCodes.notFound)
   })

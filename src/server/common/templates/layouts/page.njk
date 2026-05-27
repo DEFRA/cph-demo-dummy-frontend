@@ -9,32 +9,21 @@
 
 {% set mainClasses = "app-main-wrapper" %}
 
-{% block headIcons %}
-  <link rel="icon" sizes="48x48" href="{{ getAssetPath("node_modules/govuk-frontend/dist/govuk/assets/images/favicon.ico") }}">
-  <link rel="icon" sizes="any" href="{{ getAssetPath("node_modules/govuk-frontend/dist/govuk/assets/images/favicon.svg") }}" type="image/svg+xml" >
-  <link rel="mask-icon" href="{{ getAssetPath("node_modules/govuk-frontend/dist/govuk/assets/images/govuk-icon-mask.svg") }}" color="{{ themeColor }}">
-  <link rel="apple-touch-icon" href="{{ getAssetPath("node_modules/govuk-frontend/dist/govuk/assets/images/govuk-icon-180.png") }}">
-  <link rel="manifest" href="{{ getAssetPath("node_modules/govuk-frontend/dist/govuk/assets/manifest.json") }}">
-{% endblock %}
-
 {% block head %}
-  <link href="{{ getAssetPath('src/client/stylesheets/application.scss') }}" rel="stylesheet">
+  <link href="{{ getAssetPath('stylesheets/application.scss') }}" rel="stylesheet">
 {% endblock %}
 
 {% block header %}
-  {# serviceName being used in govukHeader will be @deprecated in v6. It has moved to govukServiceNavigation - https://github.com/alphagov/govuk-frontend/blob/main/CHANGELOG.md#move-service-name-and-navigation-links-from-the-govuk-header-to-service-navigation-component #}
-  {{ govukHeader({
-    homepageUrl: "https://www.gov.uk/",
-    classes: "app-header",
-    containerClasses: "govuk-width-container",
-    serviceName: serviceName,
-    serviceUrl: serviceUrl,
-    useTudorCrown: true
-  }) }}
-
-  {{ govukServiceNavigation({
-    navigation: navigation
-  }) }}
+  <header class="govuk-header " role="banner" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+        <div class="header-container">
+        <h1 class="govuk-header__service-name">{{ serviceName }}</h1> 
+        <h3>{{userName}} | <a href="/signout" class="govuk-link govuk-link--inverse govuk-!-margin-top-1">Sign out</a></h3>
+        <h3>{{userRole}} | {{userEmail}}</h3>
+        <p class="govuk" style="color: white; margin-top: 20px;"> </p>
+      </div>
+    </div>
+  </header>
 {% endblock %}
 
 {% block pageTitle %}
@@ -52,26 +41,9 @@
 {% block content %}{% endblock %}
 
 {% block footer %}
-  {{ govukFooter({
-    meta: {
-      items: [
-        {
-          href: "https://www.gov.uk/help/privacy-notice",
-          text: "Privacy"
-        },
-        {
-          href: "https://www.gov.uk/help/cookies",
-          text: "Cookies"
-        },
-        {
-          href: "https://www.gov.uk/help/accessibility-statement",
-          text: "Accessibility statement"
-        }
-      ]
-    }
-  }) }}
+  <hr />
 {% endblock %}
 
 {% block bodyEnd %}
-  <script type="module" src="{{ getAssetPath('src/client/javascripts/application.js') }}"></script>
+  <script type="module" src="{{ getAssetPath('application.js') }}"></script>
 {% endblock %}

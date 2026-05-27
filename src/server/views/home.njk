@@ -1,0 +1,9 @@
+{% extends 'layouts/page.njk' %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block content %}
+  {{ govukPanel({
+    titleText: "Dummy frontend"
+  }) }}
+{% endblock %}
