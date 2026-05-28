@@ -22,6 +22,7 @@ const auth = {
 
     server.auth.strategy('session-auth', 'cookie', {
       cookie: {
+        name: 'cph-demo-dummy-frontend-sid',
         path: '/',
         password: config.get('session.cookie.password'),
         isSecure: config.get('session.cookie.secure'),
