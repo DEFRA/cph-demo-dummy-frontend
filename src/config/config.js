@@ -64,7 +64,7 @@ export const config = convict({
   serviceName: {
     doc: 'Applications Service Name',
     format: String,
-    default: 'CPH Other Service'
+    default: 'Other Service (eg:SAM)'
   },
   root: {
     doc: 'Project root',

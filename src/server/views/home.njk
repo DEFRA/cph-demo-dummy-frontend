@@ -1,9 +1,26 @@
 {% extends 'layouts/page.njk' %}
 
 {% from "govuk/components/panel/macro.njk" import govukPanel %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% block content %}
-  {{ govukPanel({
-    titleText: "Dummy frontend"
-  }) }}
+<form method="post" novalidate="novalidate" action="/">
+{{ govukInput({
+  label: {
+    text: "Enter a CNumber",
+    classes: "govuk-label--l"    
+  },
+  id :"cNumber",  
+  name:"cNumber"
+}) }}
+  {{ govukButton({
+  text: "Go To Other Service" 
+}) }}
+</form>
 {% endblock %}
+
+
+
+
