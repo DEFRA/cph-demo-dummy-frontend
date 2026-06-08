@@ -9,7 +9,7 @@ const contentSecurityPolicy = {
   options: {
     // Hash 'sha256-GUQ5ad8JK5KmEWmROf3LZd9ge94daqNvd8xy9YS1iDw=' is to support a GOV.UK frontend script bundled within Nunjucks macros
     // https://frontend.design-system.service.gov.uk/import-javascript/#if-our-inline-javascript-snippet-is-blocked-by-a-content-security-policy
-    defaultSrc: ['self'],
+    defaultSrc: ['self','http://localhost:3000'],
     fontSrc: ['self', 'data:'],
     connectSrc: ['self', 'wss', 'data:'],
     mediaSrc: ['self'],
@@ -22,7 +22,7 @@ const contentSecurityPolicy = {
     frameSrc: ['self', 'data:'],
     objectSrc: ['none'],
     frameAncestors: ['none'],
-    formAction: ['self'],
+    formAction: ['self','http://localhost:3000'],
     manifestSrc: ['self'],
     generateNonces: false
   }
