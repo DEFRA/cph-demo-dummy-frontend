@@ -6,19 +6,27 @@
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {% block content %}
+{% set cphError = null %}
+{% if errorMessage %}
+  {% set cphError = { text: errorMessage } %}
+{% endif %}
 <form method="post" novalidate="novalidate" action="/">
+<input type="hidden" name="crumb" value="{{ crumb }}">
 {{ govukInput({
   label: {
-    text: "Enter a CNumber",
+    text: "Enter a CPHNumber",
     classes: "govuk-label--l"    
   },
   id :"cNumber",  
-  name:"cNumber"
-}) }}
-  {{ govukButton({
-  text: "Go To Other Service" 
+  name:"cNumber",
+  value: cNumber,
+  classes: "govuk-input--width-10",
+  errorMessage: cphError
+}) }}{{ govukButton({
+  text: "Search for CPH" 
 }) }}
 </form>
+
 {% endblock %}
 
 

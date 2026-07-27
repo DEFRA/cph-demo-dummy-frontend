@@ -2,6 +2,8 @@ import Bell from '@hapi/bell'
 import Cookie from '@hapi/cookie'
 import { config } from '../../config/config.js'
 
+const isAuthBypassEnabled = process.env.AUTH_BYPASS === 'true'
+
 const auth = {
   name: 'auth',
   register: async (server, _options) => {
@@ -29,10 +31,17 @@ const auth = {
         isSameSite: 'Lax',
         ttl: config.get('session.cookie.ttl')
       },
-      redirectTo: '/signin'
+      redirectTo: isAuthBypassEnabled ? false : '/signin'
     })
 
-    server.auth.default('session-auth')
+    server.auth.default(
+      isAuthBypassEnabled
+        ? {
+            mode: 'try',
+            strategy: 'session-auth'
+          }
+        : 'session-auth'
+    )
   }
 }
 

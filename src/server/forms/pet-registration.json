@@ -1,0 +1,356 @@
+{
+  "engine": "V2",
+  "name": "Registration Form",
+  "schema": 2,
+  "startPage": "/intro",
+  "metadata": {
+    "referenceNumberPrefix": "CPH",
+    "referenceNumber": true
+  },
+  "pages": [
+    {
+      "id": "449c053b-9201-4312-9a75-187ac1b720eb",
+      "title": "What type of registration do you need?",
+      "path": "/intro",
+      "section": "449c053b-9201-4312-9a75-187ac1b720ec",
+      "components": [
+        {
+          "id": "2e088e75-c6f6-4a0f-8f1f-3cee14c71e4c",
+          "type": "RadiosField",
+          "title": "Type of registration",
+          "name": "registrationType",
+          "shortDescription": "Select the type of registration you need",
+          "options": {
+            "required": true
+          },
+          "list": "9f3f4c41-6d98-4e72-8d75-2f29b7c3b9dd",
+          "schema": {}
+        }
+      ]
+    },
+    {
+      "id": "8ce29410-a306-4b56-8e8d-67d10f7a2f90",
+      "title": "What best describes your holding?",
+      "path": "/holding-description",
+      "section": "449c053b-9201-4312-9a75-187ac1b720ec",
+      "components": [
+        {
+          "id": "28c53755-9f35-4510-8d0f-df31ea17617b",
+          "type": "RadiosField",
+          "title": "What best describes your holding?",
+          "name": "holdingDescription",
+          "shortDescription": "Select the option that best describes your holding",
+          "options": {
+            "required": true
+          },
+          "list": "1d3e7f3c-bf22-4f31-95f0-d4c344fc833f",
+          "schema": {}
+        }
+      ]
+    },   
+    {
+      "id": "8fc29410-a308-4b36-8e0d-67e10f7a2f80",
+      "title": "What is your full name?",
+      "path": "/full-name",
+      "section": "449c053b-9201-4312-9a75-187ac1b720ec",
+      "components": [
+        {
+          "id": "3b6f4c41-6d98-4e72-8d75-2f29b7c3b9de",
+          "type": "TextField",
+          "title": "Title",
+          "name": "title",
+          "shortDescription": "What is your title?",
+          "options": {
+            "required": false
+          },         
+          "schema": {
+            "minLength": 2
+          }
+        },        
+        {
+          "id": "3b6f4c43-6d99-4e73-8d76-2f29b7c3b9e0",
+          "type": "TextField",
+          "title": "First Name",
+          "name": "firstName",
+          "shortDescription": "What is your first name?",
+          "options": {
+            "required": true
+          },         
+          "schema": {
+            "minLength": 2
+          }
+        },
+        {
+          "id": "3b6f4c44-6d99-4e73-8d76-2f29b7c3b9e1",
+          "type": "TextField",
+          "title": "Middle Name",
+          "name": "middleName",
+          "shortDescription": "What is your middle name?",
+          "options": {
+            "required": false
+          },         
+          "schema": {
+            "minLength": 2
+          }
+        },        
+      {
+          "id": "3b6f4c42-6d99-4e73-8d76-2f29b7c3b9df",
+          "type": "TextField",
+          "title": "Last Name",
+          "name": "lastName",
+          "shortDescription": "What is your last name?",
+          "options": {
+            "required": true
+          },         
+          "schema": {
+            "minLength": 2
+          }
+        } 
+      ]
+    },
+    {
+      "id": "8fc29411-a308-4b36-8e0d-67e10f7a2f81",
+      "title": "What is the name of your business?",
+      "path": "/business-name",
+      "section": "450c052b-9201-4313-9a75-188ac1b730ec",
+      "components": [
+        {
+          "id": "3b6f4c42-6d99-4e73-8d76-2f29b7c3b9df",
+          "type": "TextField",
+          "title": "Business Name",
+          "name": "businessName",
+          "shortDescription": "What is the name of your business?",
+          "options": {
+            "required": true
+          },         
+          "schema": {
+            "minLength": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "8fc29412-a308-4b36-8e0d-67e10f7a2f82",
+      "title": "What is your email address?",
+      "path": "/email-address",
+      "section": "450c052b-9201-4313-9a75-188ac1b730ec",
+      "components": [
+        {
+          "id": "3b6f4c43-6d99-4e73-8d76-2f29b7c3b9e0",
+          "type": "EmailAddressField",
+          "title": "Email Address",
+          "name": "emailAddress",
+          "shortDescription": "What is your email address?",
+          "options": {
+            "required": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "8fc29413-a308-4b36-8e0d-67e10f7a2f83",
+      "title": "What is your phone number?",
+      "path": "/phone-number",
+      "section": "450c052b-9201-4313-9a75-188ac1b730ec",
+      "components": [
+        {
+          "id": "3b6f4c44-6d99-4e73-8d76-2f29b7c3b9e1",
+          "type": "TelephoneNumberField",
+          "title": "Phone Number",
+          "name": "phoneNumber",
+          "shortDescription": "What is your phone number?",
+          "options": {
+            "required": true
+          },         
+          "schema": {
+            "minLength": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "8fc29414-a308-4b36-8e0d-67e10f7a2f84",
+      "title": "What is your business address?",
+      "path": "/business-address",
+      "section": "450c052b-9201-4313-9a75-188ac1b730ec",
+      "components": [
+        {
+          "id": "7e1cb4f2-65a1-48cd-b6d2-9e1034ecf271",
+          "type": "Details",
+          "title": "Help with business address",
+          "name": "businessAddressHelp",
+          "content": "Enter your business postcode and then select the address from the list. If you cannot find it, you can enter the address manually.",
+          "options": {},
+          "schema": {}
+        },
+        {
+          "id": "3b6f4c45-6d99-4e73-8d76-2f29b7c3b9e2",
+          "type": "UkAddressField",
+          "title": "Business Address",
+          "name": "businessAddress",
+          "shortDescription": "What is your business address?",         
+          "options": {
+            "required": true,
+            "usePostcodeLookup": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "8fc29416-a308-4b36-8e0d-67e10f7a2f86",
+      "title": "What is your address?",
+      "path": "/your-address",
+      "section": "450c052b-9201-4313-9a75-188ac1b730ec",
+      "components": [
+        {
+          "id": "7e1cb3f1-66a1-49cd-b6d4-9e2034ecf285",
+          "type": "Details",
+          "title": "Help with address",
+          "name": "addressHelp",
+          "content": "Enter your postcode and then select the address from the list. If you cannot find it, you can enter the address manually.",
+          "options": {},
+          "schema": {}
+        },        
+        {
+          "id": "3b6f4c46-6d99-4e73-8d76-2f29b7c3b9e3",
+          "type": "UkAddressField",
+          "title": "Address",
+          "name": "address",
+          "shortDescription": "What is your address?",
+          "hint": "This is the address where you live. Enter your postcode and select your address from the list",
+          "options": {
+            "required": true,
+            "usePostcodeLookup": true
+          } 
+        }
+      ]
+    }, 
+    {
+      "id": "8fc29417-a308-4b36-8e0d-67e10f7a2f87",
+      "title": "Where will livestock be kept?",
+      "path": "/livestock-location",
+      "section": "450c052b-9201-4313-9a75-188ac1b730ec",
+      "components": [
+        {
+          "id": "3b6f4c47-6d99-4e73-8d76-2f29b7c3b9e4",
+          "type": "EastingNorthingField",
+          "title": "Livestock Location",
+          "name": "livestockLocation",
+          "hint": "Enter the easting and northing coordinates for the location where livestock will be kept",
+          "shortDescription": "Where will livestock be kept?",
+          "options": {
+            "required": true,
+            "type":"number"            
+          },         
+          "schema": {
+            "minLength": 2
+          }
+        }
+      ]
+    },   
+    {
+      "id": "9ce29411-a306-4b56-8e8d-67d10f7a2f92",
+      "title": "Does this land already have a CPH number?",
+      "path": "/land-cph-number",
+      "section": "449c053b-9201-4312-9a75-187ac1b720ec",
+      "components": [
+        {
+          "id": "38c53756-9f35-4510-8d0f-df31ea17617d",
+          "type": "YesNoField",
+          "title": "Does this land already have a CPH number?",
+          "name": "landCphNumber",
+          "shortDescription": "Does this land already have a CPH number?",
+          "options": {
+            "required": true
+          }
+        }
+      ]
+    },    
+    {
+      "id": "9ce29410-a306-4b56-8e8d-67d10f7a2f91",
+      "title": "Do you have the right to keep livestock on this land?",
+      "path": "/livestock-right",
+      "section": "449c053b-9201-4312-9a75-187ac1b720ec",
+      "components": [
+        {
+          "id": "38c53755-9f35-4510-8d0f-df31ea17617c",
+          "type": "YesNoField",
+          "title": "Do you have the right to keep livestock on this land?",
+          "name": "livestockRight",
+          "shortDescription": "Do you have the right to keep livestock on this land?",
+          "options": {
+            "required": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "a1c39511-b407-4c47-9f1e-78f21a8b3a93",
+      "title": "Check your answers",
+      "path": "/summary",
+      "controller": "SummaryPageController"
+    },
+    {
+      "id": "b2d40612-c518-5d58-af2f-89a32b9c4b04",
+      "title": "Registration confirmed",
+      "path": "/reference/:id",
+      "controller": "StatusPageController"
+    }
+  ],
+  "sections": [
+    {
+      "id": "449c053b-9201-4312-9a75-187ac1b720ec",
+      "title": "Registration Type",
+      "name": "registrationType"
+    },
+    {
+      "id": "450c052b-9201-4313-9a75-188ac1b730ec",
+      "title": "Contact Details",
+      "name": "contactDetails"
+    }
+  ],
+  "lists": [
+    {
+      "id": "9f3f4c41-6d98-4e72-8d75-2f29b7c3b9dd",
+      "name": "registrationTypeOptions",
+      "title": "Registration type options",
+      "type": "string",
+      "items": [
+        {
+          "id": "4fa8e991-e85e-4f7a-b89a-a0b676c1b29a",
+          "text": "Permanent CPH",
+          "value": "permanentCPH"
+        },
+        {
+          "id": "8c63572b-8715-49e9-af56-986f07476836",
+          "text": "Landless Keeper CPH",
+          "value": "landlessKeeperCPH"
+        }
+      ]
+    },
+    {
+      "id": "1d3e7f3c-bf22-4f31-95f0-d4c344fc833f",
+      "name": "holdingDescription",
+      "title": "Holding description",
+      "type": "string",
+      "items": [
+        {
+          "id": "b069f7f5-f4df-4b7d-a4c6-e511f6dbf154",
+          "text": "Agricultural",
+          "value": "agricultural"
+        },
+        {
+          "id": "2fc80758-5a45-4fd7-a8f5-86bb3679a6e6",
+          "text": "Showground",
+          "value": "showground"
+        },
+        {
+          "id": "f883a61b-c3fc-4c96-85e2-11ea1d0475fe",
+          "text": "Markets",
+          "value": "markets"
+        }
+      ]
+    }       
+  ],
+  "conditions": []
+}

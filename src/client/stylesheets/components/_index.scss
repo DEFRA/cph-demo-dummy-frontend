@@ -1,2 +1,12 @@
 // import custom component styles
 @use "heading/heading";
+
+// Map container styling
+.map-container {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+  position: relative;
+}
+

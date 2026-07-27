@@ -1,0 +1,26 @@
+{% extends 'layouts/page.njk' %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block content %}
+
+<div class="govuk-inset-text">
+  <span class="govuk-!-font-weight-bold">CPH Number Found:</span> {{ cphNumber }}
+</div>
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Edit",
+    element: "a",
+    href: "/cph-found/edit",
+    classes: "govuk-button"
+  }) }}
+  {{ govukButton({
+    text: "Back",
+    element: "a",
+    href: "/",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+
+{% endblock %}

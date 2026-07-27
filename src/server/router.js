@@ -5,8 +5,9 @@ import { health } from './health/index.js'
 import { serveStaticFiles } from './common/helpers/serve-static-files.js'
 import signin from './routes/signin.js'
 import signout from './routes/signout.js'
+import ogcFeatures from './routes/ogc-features.js'
 
-const routes = [...home, ...signin, ...signout]
+const routes = [...home, ...signin, ...signout, ...ogcFeatures]
 
 export const router = {
   plugin: {

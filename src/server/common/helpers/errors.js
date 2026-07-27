@@ -29,11 +29,24 @@ export function catchAll(request, h) {
     request.logger.error(response?.stack)
   }
 
-  return h
-    .view('error/index', {
-      pageTitle: errorMessage,
-      heading: statusCode,
-      message: errorMessage
-    })
-    .code(statusCode)
+  try {
+    return h
+      .view('error/index', {
+        pageTitle: errorMessage,
+        heading: statusCode,
+        message: errorMessage
+      })
+      .code(statusCode)
+  } catch (error) {
+    request.logger.error(error)
+
+    // Fall back to the original Boom payload when view rendering is unavailable.
+    return h
+      .response(response.output?.payload ?? {
+        statusCode,
+        error: 'Internal Server Error',
+        message: errorMessage
+      })
+      .code(statusCode)
+  }
 }

@@ -14,20 +14,24 @@ const manifestPath = path.join(
 
 let webpackManifest
 
-export function context(request) {
-  if (!webpackManifest) {
-    try {
-      webpackManifest = JSON.parse(readFileSync(manifestPath, 'utf-8'))
-    } catch (error) {
-      logger.error(`Webpack ${path.basename(manifestPath)} not found`)
-    }
+function loadWebpackManifest() {
+  try {
+    webpackManifest = JSON.parse(readFileSync(manifestPath, 'utf-8'))
+  } catch (error) {
+    logger.error(`Webpack ${path.basename(manifestPath)} not found`)
   }
+}
+
+export function context(request) {
+  // Always refresh in request context so template links follow latest hashed assets.
+  loadWebpackManifest()
 
   return {
-    assetPath: `${assetPath}/assets`,
+    assetPath: `${assetPath}`,
     serviceName: config.get('serviceName'),
     serviceUrl: '/',
     breadcrumbs: [],
+    requiresManualReview: request?.yar?.get('requiresManualReview') === true,
     navigation: buildNavigation(request),
     getAssetPath(asset) {
       const webpackAssetPath = webpackManifest?.[asset]

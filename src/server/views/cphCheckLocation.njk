@@ -1,0 +1,43 @@
+{% extends 'layouts/page.njk' %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Is this livestock location correct?</h1>
+
+{{ govukWarningText({
+  text: message,
+  iconFallbackText: "Warning"
+}) }}
+
+{#
+<dl class="govuk-summary-list govuk-!-margin-bottom-6">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Easting</dt>
+    <dd class="govuk-summary-list__value">{{ easting }}</dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Northing</dt>
+    <dd class="govuk-summary-list__value">{{ northing }}</dd>
+  </div>
+</dl>
+#}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Yes, this is correct",
+    element: "a",
+    href: "/cph-check-location/confirm",
+    classes: "govuk-button"
+  }) }}
+  {{ govukButton({
+    text: "Change the location",
+    element: "a",
+    href: "/pet-registration/livestock-location",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+
+{% endblock %}

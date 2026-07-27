@@ -1,0 +1,34 @@
+{% extends 'layouts/page.njk' %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block content %}
+
+{% if requiresManualReview %}
+{{ govukPanel({
+  titleText: "Application complete"
+}) }}
+<h1 class="govuk-heading-l">What happens next </h1>
+<p>We need to check your application before we can issue a CPH number. We might need to contact you for more information.</p>
+ 
+<p>
+This can take up to 10 working days. If you've told us the livestock will arrive sooner, we'll make sure you receive your CPH number before they arrive.
+</p>
+
+<a href="#">What did you think of the service?</a>
+{% else %}
+{{ govukPanel({
+  titleText: "Registration complete",
+  html: "<p>Your CPH number is</p><strong>" + cphNumber + "</strong>"
+}) }}
+
+<p class="govuk-body">
+  We have sent a confirmation email to the address you provided.
+</p>
+
+<p class="govuk-body">
+  You can use your CPH number for all future correspondence.
+</p>
+{% endif %}
+{% endblock %}
